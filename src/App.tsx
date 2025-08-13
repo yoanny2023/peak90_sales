@@ -13,7 +13,7 @@ import React from "react";
 
 function LayoutPage(){ 
   const[showMenu,setShowMenu] = React.useState(false)
-  if(showMenu) return <MenuShow setShowMenu={setShowMenu}  />
+  if(showMenu) return <MenuShow showMenu={showMenu} setShowMenu={setShowMenu}  />
   return (
     <DataContextProvider>
       <Pagina > 

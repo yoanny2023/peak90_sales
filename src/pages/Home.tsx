@@ -1,17 +1,15 @@
-import React from "react"
 import { NavLink } from "react-router-dom"
 import Header from "../components/home/Header"
 import Footer from "../components/footer/Footer"
+import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import {TextPlugin} from "gsap/TextPlugin";
-import gsap from "gsap";
 
 gsap.registerPlugin(TextPlugin);
 
 function Home() {
-  const videoRef = React.useRef(null);
 
-    useGSAP(()=>{
+  useGSAP(()=>{
       const tl = gsap.timeline();  
       tl
       .from(".mainTitle",{y:-150,duration:1,opacity:0,ease:"bounce.Out"})
@@ -56,5 +54,4 @@ function Home() {
 }
 
 export default Home
-
-/* .from(videoRef.current,{scale:0, opacity:0, duration:2, ease:"power1.inOut"},"-=0.5") */
+  

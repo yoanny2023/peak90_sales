@@ -3,15 +3,23 @@ import { NavLink } from 'react-router-dom'
 import {IconDashboard,IconHome,IconSum, IconX } from '@tabler/icons-react'
 import Pagina from './Pagina'
 import Footer from './footer/Footer'
+import { useGSAP } from '@gsap/react'
+import gsap from 'gsap'
 
 type MenuShowProps = {
 setShowMenu: React.Dispatch<React.SetStateAction<boolean>>
+showMenu?: boolean;
 }
+  
 function MenuShow({setShowMenu}:MenuShowProps) {
+  useGSAP(()=>{
+    gsap.from(".gsap_nav",{xPercent:-100,opacity:0, duration: 1, ease: "back.out"})
+  },[setShowMenu])
+ 
   return (
       
       <Pagina className='px-0 py-0 sm:px-0 bg-gradient-to-br from-black via-violet-950 to-black '>
-        <nav className='flex flex-col flex-1 w-[320px] px-3 bg-zinc-800/80 backdrop-blur-xl shadow-lg'>
+        <nav className='gsap_nav flex flex-col flex-1 w-[320px] px-3 bg-zinc-800/80 backdrop-blur-xl shadow-lg'>
         <div className='flex items-center justify-between p-3 border-b border-zinc-600 font-semibold'>
           <span className="">Menu</span>
           <span className='text-zinc-300 hover:text-red-700'
