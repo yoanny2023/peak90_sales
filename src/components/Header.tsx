@@ -1,12 +1,10 @@
 import React from 'react';
 import DateRange from './DateRange';
 import Months from './Months';
-import { useLocation } from 'react-router-dom';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 
 function Header() { 
-  const location = useLocation();
   const[title,setTitle] = React.useState("Summary");
 
   useGSAP(()=>{
