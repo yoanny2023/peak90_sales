@@ -1,6 +1,8 @@
 import React from "react"
 import type { IVenda } from "../Context/DataContext"
 import { VictoryPie,VictoryChart,VictoryBar, VictoryAxis } from "victory";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
 type GraphProps = {
   data: IVenda[]
@@ -13,6 +15,19 @@ type IGraph = {
 function Graphs({data}:GraphProps){ 
 
   const[graph,setGraph] = React.useState<IGraph[]>([]);
+   
+  useGSAP(()=>{
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".gsap_graph",  
+        start: "top 75%",  
+        end: "bottom 90%",
+        scrub:4,
+      }
+    });
+
+    tl.from(".gsap_graph",{scale:0.5,opacity:0.3,duration:1, ease:"power1.inOut"})
+  },[])
 
   React.useEffect(()=>{
     const ItemsPaid = data.filter((person)=> person.status === "pago");
@@ -35,7 +50,7 @@ function Graphs({data}:GraphProps){
   },[data])
 
   return (
-   <section className='py-3 px-6 m-3 flex flex-col flex-1 gap-3 rounded-2xl bg-zinc-600/90
+   <section className='gsap_graph py-3 px-6 m-3 flex flex-col flex-1 gap-3 rounded-2xl bg-zinc-600/90
    '>
     <h2 className="text-center text-2xl">Statistics</h2>
     <h2 className="text-white font-semibold text-2xl">Top 5 Clients</h2>
@@ -91,10 +106,3 @@ function Graphs({data}:GraphProps){
 }
  
 export default Graphs
-
-/* .map((customer)=>{
-    return {
-      name:"",
-      total:""
-    }
-  }) */

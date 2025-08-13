@@ -1,9 +1,18 @@
 import { NavLink } from 'react-router-dom';
 import type { IVenda } from '../Context/DataContext';
+/* import { useGSAP } from '@gsap/react';
+import gsap from 'gsap'; */
 
 function SalesItem({sale}:{sale:IVenda}) {
+   //const location = useLocation();
+ 
+ /*  useGSAP(() =>{
+    gsap.set(".gsap_items",{autoAlpha:0})
+   gsap.from(".gsap_items",{autoAlpha:1, duration:2, ease: "power1.inOut",stagger:0.04})
+  },[location.pathname]); */
+  
   return (
-    <div className='text-sm sm:text-xl md:text-[16px] lg:text-xl px-4 py-2 sm:py-3 sm:px-6 m-3 grid grid-cols-1 gap-1 md:grid-cols-[auto_auto_1fr] md:gap-4 items-center  
+    <div className='gsap_items text-sm sm:text-xl md:text-[16px] lg:text-xl px-4 py-2 sm:py-3 sm:px-6 m-3 grid grid-cols-1 gap-1 md:grid-cols-[auto_auto_1fr] md:gap-4 items-center  
     bg-zinc-950/60 backdrop-blur-md shadow-2xl rounded-3xl border border-zinc-700
     hover:bg-zinc-800/90 transition duration-300
     '>

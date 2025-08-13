@@ -2,6 +2,7 @@ import React from 'react'
 import { useData } from '../Context/DataContext';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
+import { useLocation } from 'react-router-dom';
 
 type MonthBtnProps = React.ComponentProps<"button"> & {
 n:number;
@@ -11,12 +12,13 @@ className?: string;
 
 function MonthBtn({n,label,className}:MonthBtnProps) {
   const{setStart,setEnd} = useData();
+  const location = useLocation();
 
     useGSAP(() => {
       gsap.set(".gsap_btn",{yPercent: -100, autoAlpha:0},)
       gsap.to(".gsap_btn",
         {yPercent: 0, autoAlpha:1, duration:1, ease:"power1.inOut", stagger: 0.3,delay:0.5})
-    },[]);  
+    },[location.pathname]);  
 
  function formatDate(date:Date){
  const dd = String(date.getDate()).padStart(2,"0");

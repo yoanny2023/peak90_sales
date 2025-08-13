@@ -36,7 +36,7 @@ function Home() {
             autoPlay
         />
         </div> */}
-        <p className="title text-zinc-300 text-3xl max-w-[850px] sm:text-5xl lg:text-7xl text-center font-semibold">
+        <p className="title text-zinc-300 text-3xl max-w-[850px] sm:text-5xl lg:text-6xl text-center font-semibold">
           Welcome to your 90-days sales tracker
         </p>
         <p className="title text-zinc-500 text-center max-w-[450px]">

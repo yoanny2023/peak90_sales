@@ -2,13 +2,15 @@ import DateInput from './DateInput'
 import { useData } from '../Context/DataContext'
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
+import { useLocation } from 'react-router-dom';
 
 function DateRange() {
 const{start,setStart,end,setEnd} = useData();
+const location = useLocation();
 
 useGSAP(()=>{
  gsap.from(".gsap_form",{yPercent:-100, opacity:0, duration:1, ease:"power1.inOut"})
-},[]);
+},[location.pathname]);
 
   return (
     <form onSubmit={(event) => event.preventDefault()}
