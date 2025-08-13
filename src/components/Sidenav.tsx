@@ -1,4 +1,6 @@
+import { useGSAP } from '@gsap/react'
 import { IconDashboard, IconGraphFilled,IconHome,IconMenu2,IconSum } from '@tabler/icons-react'
+import gsap from 'gsap'
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 
@@ -7,9 +9,13 @@ type sidenavProps = {
 }
   
 function Sidenav({setShowMenu}:sidenavProps) {
+  
+ useGSAP(()=>{
+      gsap.from(".gsap_nav",{xPercent:-100,opacity:0,duration:1,ease:"power1.inOut"})
+ },[]);
 
   return (
-    <nav className='flex flex-row gap-1 text-sm sm:text-[16px] fixed z-10 w-[90%] sm:flex-row md:gap-3 md:fixed md:left-4 md:flex-col md:w-[210px] md:h-[97vh] 
+    <nav className='gsap_nav flex flex-row gap-1 text-sm sm:text-[16px] fixed z-10 w-[90%] sm:flex-row md:gap-3 md:fixed md:left-4 md:flex-col md:w-[210px] md:h-[97vh] 
     bg-zinc-700/80 backdrop-blur-xl shadow-lg rounded-lg px-4 py-2'>
       <NavLink to="/" 
        className='flex items-center gap-2 font-semibold text-amber-500

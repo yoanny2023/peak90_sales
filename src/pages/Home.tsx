@@ -28,7 +28,7 @@ function Home() {
        <Header />
       <main className="flex flex-1 flex-col justify-center items-center gap-3">
         <h1 className="mainTitle text-3xl hidden sm:block font-bold text-amber-500">Welcome to your</h1>
-        <div className="hidden sm:block w-full max-w-lg h-auto object-contain" >
+       {/*  <div className="hidden sm:block w-full max-w-lg h-auto object-contain" >
           <video 
             ref={videoRef}
             src="/videos/peak_jar.mp4"
@@ -38,7 +38,7 @@ function Home() {
             loop
             autoPlay
         />
-        </div>
+        </div> */}
         <p className="title text-zinc-300 text-3xl max-w-[850px] sm:text-5xl lg:text-3xl text-center font-semibold">
           Welcome to your 90-days sales tracker
         </p>
