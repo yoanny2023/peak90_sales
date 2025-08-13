@@ -16,11 +16,10 @@ function Home() {
       tl
       .from(".mainTitle",{y:-150,duration:1,opacity:0,ease:"bounce.Out"})
       .to(".mainTitle",{text:"Finance App",duration:1.5,ease:"power1.in"})
-      .from(videoRef.current,{scale:0, opacity:0, duration:2, ease:"power1.inOut"},"-=0.5")
       .fromTo(".title", 
         {y:20,opacity:0},
-        {y:0,opacity:1,duration:1,stagger:0.1},"-=0.5")
-        tl.from(".btn",{scale:1.5,opacity:0,duration:1,ease:'power1.inOut'},"-=0.5")
+        {y:0,opacity:1,duration:1,stagger:0.1},"-=0.2")
+        tl.from(".btn",{scale:1.5,opacity:0,duration:1,ease:'power1.inOut'},"-=0.4")
     },[]);
 
   return (
@@ -57,3 +56,5 @@ function Home() {
 }
 
 export default Home
+
+/* .from(videoRef.current,{scale:0, opacity:0, duration:2, ease:"power1.inOut"},"-=0.5") */
