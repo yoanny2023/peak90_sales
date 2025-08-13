@@ -11,7 +11,7 @@ function Header() {
 
   useGSAP(()=>{
     gsap.from(".gsap_text",{scale:0, opacity:0, duration:1, ease:"power1.inOut"})
-  },[location.pathname])
+  },[])
   
   React.useEffect(()=>{
     if(location.pathname === "/"){

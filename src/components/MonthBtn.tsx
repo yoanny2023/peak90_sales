@@ -18,7 +18,7 @@ function MonthBtn({n,label,className}:MonthBtnProps) {
       gsap.set(".gsap_btn",{yPercent: -100, autoAlpha:0},)
       gsap.to(".gsap_btn",
         {yPercent: 0, autoAlpha:1, duration:1, ease:"power1.inOut", stagger: 0.3,delay:0.5})
-    },[location.pathname]);  
+    },[]);  
 
  function formatDate(date:Date){
  const dd = String(date.getDate()).padStart(2,"0");

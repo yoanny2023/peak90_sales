@@ -10,7 +10,7 @@ const location = useLocation();
 
 useGSAP(()=>{
  gsap.from(".gsap_form",{yPercent:-100, opacity:0, duration:1, ease:"power1.inOut"})
-},[location.pathname]);
+},[]);
 
   return (
     <form onSubmit={(event) => event.preventDefault()}
