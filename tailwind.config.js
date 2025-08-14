@@ -8,6 +8,7 @@ export default {
         { pattern: /^text-/ },
         { pattern: /^bg-/ },
         { pattern: /^p-/ },
+        { pattern: /^border-/ },
     ],
   theme: {
     extend: {

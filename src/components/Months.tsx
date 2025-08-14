@@ -1,6 +1,4 @@
-//import { useGSAP } from '@gsap/react';
 import MonthBtn from './MonthBtn'
-//import gsap from 'gsap';
 
 function getMonthName(base:Date, offset:number){
   const safeDate = new Date(base.getFullYear(), base.getMonth(), 1); // 🛡️ safe day
@@ -9,9 +7,6 @@ function getMonthName(base:Date, offset:number){
 }
 
 function Months() {
- /*  useGSAP(()=>{
-    gsap.from(".gsap_btn",{yPercent: -100, duration: 1, opacity:0, ease:"power1.inOut", stagger: 0.3})
-  },[]); */
 
     const now = new Date();  
     const buttons = [

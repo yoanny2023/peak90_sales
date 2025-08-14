@@ -11,7 +11,7 @@ import Home from "./pages/Home";
 import MenuShow from "./components/MenuShow";
 import React from "react";
 import { ScrollTrigger } from "gsap/all";
-import gsap from "gsap";
+import gsap from "gsap";  
 
 gsap.registerPlugin(ScrollTrigger)
 

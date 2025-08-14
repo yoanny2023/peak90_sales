@@ -3,6 +3,7 @@ import { IconDashboard, IconGraphFilled,IconHome,IconMenu2,IconSum } from '@tabl
 import gsap from 'gsap'
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import Footer from './footer/Footer'
 
 type sidenavProps = {
   setShowMenu: React.Dispatch<React.SetStateAction<boolean>>
@@ -39,14 +40,17 @@ function Sidenav({setShowMenu}:sidenavProps) {
           <NavLink to="/resumo" className={({isActive}) => (
             isActive ? "text-amber-500 font-semibold" : 'text-zinc-300 hover:text-amber-400 flex-1'
           )} >Resume</NavLink>
-        </li>
+        </li>  
         <li className='flex items-center gap-1 sm:gap-2 hover:bg-zinc-950 transition duration-100 py-1 px-2 rounded-xl'>
           <IconDashboard  stroke={1} size={20} className='text-zinc-100' />
           <NavLink to="/sales" className={({isActive}) => (
             isActive ? "text-amber-500 font-semibold " : 'text-zinc-300 hover:text-amber-400 flex-1'
-          )} >Sales</NavLink>
+          )} >
+            Sales
+          </NavLink>
         </li>
       </ul>
+      <Footer className="hidden" /> 
     </nav>
   )
 }

@@ -29,7 +29,6 @@ export default function useFetch<T>(url:RequestInfo | URL ,options?:RequestInit)
             if(!signal.aborted) setData(result)
 
           }catch (error) {
-              console.log(error)
               if(!signal.aborted && error instanceof Error) setError(error.message)
           }finally{
             if(!signal.aborted) setLoading(false)
@@ -42,4 +41,4 @@ export default function useFetch<T>(url:RequestInfo | URL ,options?:RequestInit)
       }; // clean up function when components unmounts
   },[url])
   return {data,loading,error}
-}
+}  
