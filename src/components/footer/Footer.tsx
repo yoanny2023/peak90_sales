@@ -2,11 +2,7 @@ import { useGSAP } from "@gsap/react"
 import { IconBrandInstagram,IconBrandLinkedin } from "@tabler/icons-react"
 import gsap from "gsap";
 
-type FooterProps = {
-  className?:string
-}
-
-function Footer({className}:FooterProps) {
+function Footer() {
   useGSAP(()=>{
     const tl = gsap.timeline();
     tl.from(".footer > *",{y:70,opacity:0,duration:2,ease:"power1.out"})
@@ -14,9 +10,7 @@ function Footer({className}:FooterProps) {
 
   return ( 
    <footer className={`footer mt-auto flex items-center gap-3`}>
-            <span className={`mr-auto text-sm text-zinc-500
-              ${className ? className : ""}
-              `}>
+            <span className={`mr-auto text-sm text-zinc-500`}>
                 Reserved&copy;_Yv{new Date().getFullYear()}
             </span>
             <a href="https://www.linkedin.com/in/yoanny-vasco-358399132/" target="_blank">

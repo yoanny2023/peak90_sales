@@ -3,7 +3,6 @@ import { IconDashboard, IconGraphFilled,IconHome,IconMenu2,IconSum } from '@tabl
 import gsap from 'gsap'
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import Footer from './footer/Footer'
 
 type sidenavProps = {
   setShowMenu: React.Dispatch<React.SetStateAction<boolean>>
@@ -50,7 +49,6 @@ function Sidenav({setShowMenu}:sidenavProps) {
           </NavLink>
         </li>
       </ul>
-      <Footer className="hidden" /> 
     </nav>
   )
 }
